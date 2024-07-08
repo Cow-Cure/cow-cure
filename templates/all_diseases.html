@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Poojya Gupta" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <meta name="description" content="game" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Cow Cure</title>
+    <style>
+      body {
+          background-image: url("{{ url_for('static', filename='images/image 1.png') }}");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: rgba(255, 255, 255,1);
+          background-attachment: fixed;
+      }
+  </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='images/Cow cure bar dark transparent.png') }}" width="256px" height="120px" /></a>      <nav class="heading">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#">All Diseases</a>
+      </nav>
+      <div class="fas fa-bars" id="menu-btn"></div>
+    </header>
+
+    <section class="alldiseases">
+      <h1>All Diseases</h1>
+      <h2>A</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Anthrax">Anthrax</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Anaplasmosis">Anaplasmosis</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Aflatoxicosis (Dengala)">Aflatoxicosis (Dengala)</a>
+        </ol>
+      </nav>
+      <h2>B</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Babesiosis">Babesiosis</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Black Quarter">Black Quarter</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Bloating">Bloating</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Bovine Tuberculosis">Bovine Tuberculosis</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Brucellosis">Brucellosis</a>
+        </ol>
+      </nav>
+      <h2>E</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Ephemeral Fever">Ephemeral Fever</a>
+        </ol>
+      </nav>
+      <h2>F</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Fatty Liver Syndrome (Lipidosis)">Fatty Liver Syndrome (Lipidosis)</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Foot and Mouth Disease">Foot and Mouth Disease</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Foot Rot">Foot Rot</a>
+        </ol>
+      </nav>
+      <h2>H</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Haemorrhagic Septicaemia">Haemorrhagic Septicaemia</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Hypocalcaemia (Milk Fever) - Stage 1">Hypocalcaemia (Milk Fever) - Stage 1</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Hypocalcaemia (Milk Fever) - Stage 2">Hypocalcaemia (Milk Fever) - Stage 2</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Hypocalcaemia (Milk Fever) - Stage 3">Hypocalcaemia (Milk Fever) - Stage 3</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Hypomagnesaemia (Grass Tetany or Grass Staggers)">Hypomagnesaemia (Grass Tetany or Grass Staggers)</a>
+        </ol>
+      </nav>
+      <h2>I</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Infectious Bovine Rhinotracheitis">Infectious Bovine Rhinotracheitis</a>
+        </ol>
+      </nav>
+      <h2>J</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Johne's Disease">Johne's Disease</a>
+        </ol>
+      </nav>
+      <h2>K</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Ketosis">Ketosis</a>
+        </ol>
+      </nav>
+      <h2>L</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Laminitis">Laminitis</a>
+        </ol>
+      </nav>
+      <h2>M</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Mastitis (Subclinical)">Mastitis (Subclinical)</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Mastitis (Clinical)">Mastitis (Clinical)</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Mastitis (Heifer)">Mastitis (Heifer)</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Mastitis (Chronic)">Mastitis (Chronic)</a>
+        </ol>
+      </nav>
+      <h2>P</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Post Parturient Haemoglobinuria (PPH)">Post Parturient Haemoglobinuria (PPH)</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Prolapse of Uterus">Prolapse of Uterus</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Pseudo Cowpox (Milkers Nodule)">Pseudo Cowpox (Milkers Nodule)</a>
+        </ol>
+      </nav>
+      <h2>R</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Rabies">Rabies</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Retention of Placenta">Retention of Placenta</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Rumen Acidosis">Rumen Acidosis</a>
+        </ol>
+      </nav>
+      <h2>T</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Theileriosis">Theileriosis</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Trypanosomiasis (Surra)">Trypanosomiasis (Surra)</a>
+        </ol>
+      </nav>
+      <h2>U</h2>
+      <nav class="names">
+        <ol>
+          <a href="/disease_info/Udder Odema">Udder Odema</a>
+        </ol>
+        <ol>
+          <a href="/disease_info/Ulcerative Mammillitis">Ulcerative Mammillitis</a>
+        </ol>
+      </nav>
+    </section>
+    <footer class="footer">
+      <div class="queries">
+          <h2>Got any queries?</h2>
+          <form method="post" action="https://script.google.com/macros/s/AKfycbzTWUFoRSDt9R-5g4OO_w2SKg2IpjyZNZq3pt6E9NDTaSiWB9py7IS2WwGQG-0Ez06F/exec" name="queries-form">
+              <input name="Name" type="text" placeholder="Full Name" required />
+              <input name="Email" type="email" placeholder="Email Id" required />
+              <textarea name="Query" rows="3" cols="42" class="query1" placeholder="Enter your query" required></textarea>
+              <input type="submit" value="Submit" class="btn2" id="submit">
+          </form>
+      </div>
+
+      <div class="sections" id="contact">
+          <h2>Sections</h2>
+          <nav class="fnav">
+          <ul>
+              <a href="{{ url_for('index') }}">Home</a>
+          </ul>
+          <ul>
+              <a href="{{ url_for('index') }}">About us</a>
+          </ul>
+          <ul>
+              <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+          </ul>
+          </nav>
+          <br>
+          <h2>Services</h2>
+          <nav class="fnav">
+          <ul>
+              <a href="{{ url_for('symptoms1') }}">Cattle Disease Finder</a>
+          </ul>
+          <ul>
+              <a href="{{ url_for('all_diseases') }}">Disease Repository</a>
+          </ul>
+          </nav>
+      </div>
+      <div class="logo">
+          <img src="{{ url_for('static', filename='images/Cow cure logo light transparent.png') }}" alt="cow cure" width="250px" height="250px" />
+          <br>
+          <div class="copyright">
+            <p>Copyright &copy; 2024 Cow Cure</p>
+            <p>By Poojya Gupta, Bhavya</p>
+            <p>Parmar and Dikshita Bargoda</p>
+            <p>All rights reserved</p>
+          </div>
+      </div>
+      </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

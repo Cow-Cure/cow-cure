@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Poojya Gupta" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <meta name="description" content="game" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Cattle Disease Finder - Cow Cure</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/disease-finder-bg-img.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255,1);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/Cow cure bar dark transparent.png') }}" width="256px" height="120px" /></a>        <nav class="heading">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('index') }}">Contact</a>
+            <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+        </nav>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </header>
+
+    <section class="symptoms" id="Symptoms">
+        <div class="sidewords">
+            <h1><span class="high">Cattle</span></h1>
+            <h1>Disease</h1>
+            <h1>Finder</h1>
+            <p>Tell us some more about the symptoms you see in your cow...</p>
+        </div>
+        <div class="options">
+            <form action="{{ url_for('symptoms2') }}" method="post">
+                <nav class="nav1">
+                    <ul>
+                        <div class="flexbox">
+                            <label for="discharge">Discharge</label>
+                            <select name="symptoms" id="discharge" multiple>
+                                <option value="Nasal discharge">Nasal discharge</option>
+                                <option value="Blood discharge from openings">Blood discharge from openings</option>
+                                <option value="Foul-Smelling Discharge">Foul-Smelling discharge from vulva</option>
+                                <option value="Eyes discharge">Eyes discharge</option>
+                            </select>
+
+                            <label for="pain">Pain in</label>
+                            <select name="symptoms" id="pain" multiple>
+                                <option value="Foot pain">Foot pain</option>
+                                <option value="Udder pain">Udder pain</option>
+                                <option value="Pain while breast-feeding">Pain while breast-feeding</option>
+                            </select>
+
+                            <label for="redness">Redness in</label>
+                            <select name="symptoms" id="redness" multiple>
+                                <option value="Foot redness">Foot redness</option>
+                                <option value="Udder redness">Udder redness</option>
+                                <option value="Wedge shaped skin redness">Wedge shaped skin redness</option>
+                            </select>
+                            <br>
+                            <input type="checkbox" id="symptom1" name="symptoms" value="Jaundice" />
+                            <label for="symptom1">Jaundice</label>
+                            <br>
+                            <input type="checkbox" id="symptom2" name="symptoms" value="Diarrhea" />
+                            <label for="symptom2">Diarrhea</label>
+                            <br>
+                            <input type="checkbox" id="symptom3" name="symptoms" value="High heart rate" />
+                            <label for="symptom3">High heart rate</label>
+                            <br>
+                            <input type="checkbox" id="symptom4" name="symptoms" value="Depression" />
+                            <label for="symptom4">Depression</label>
+                            <br>
+                            <input type="checkbox" id="symptom5" name="symptoms" value="Udder warmth" />
+                            <label for="symptom5">Udder warmth</label>
+                            <br>
+                            <input type="checkbox" id="symptom6" name="symptoms" value="Abortion" />
+                            <label for="symptom6">Abortion</label>
+                            <br>
+                            <input type="checkbox" id="symptom7" name="symptoms" value="Restlessness" />
+                            <label for="symptom7">Restlessness</label>
+                            <br>
+                            <input type="checkbox" id="symptom8" name="symptoms" value="Salivation" />
+                            <label for="symptom8">Salivation</label>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="buttons1">
+                    <button class="back" type="button">
+                        <a href="{{ url_for('symptoms1') }}">Back</a>
+                    </button>
+                    <button class="next" type="submit">
+                        Next
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer1">
+        <span class="nowrap">Copyright &copy; 2024 Cow Cure by Poojya Gupta, Bhavya Parmar and Dikshita Bargoda. All rights reserved</span>
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/multi.js') }}"></script>
+</html>

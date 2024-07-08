@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Poojya Gupta" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <meta name="description" content="game" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Cattle Disease Finder - Cow Cure</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/disease-finder-bg-img.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255,1);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/Cow cure bar dark transparent.png') }}" width="256px" height="120px" /></a>         <nav class="heading">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('index') }}">Contact</a>
+            <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+        </nav>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </header>
+    <section class="symptoms" id="Symptoms">
+        <div class="sidewords">
+            <h1><span class="high">Cattle</span></h1>
+            <h1>Disease</h1>
+            <h1>Finder</h1>
+            <p>Just some more details as we find out what may be wrong with your cow...</p>
+        </div>
+        <div class="options">
+            <form action="{{ url_for('symptoms3') }}" method="post">
+                <nav class="nav1">
+                    <ul>
+                        <div class="flexbox">
+                            <input type="checkbox" id="symptom1" name="symptoms" value="Lack of balance (Ataxia)" />
+                            <label for="symptom1">Lack of balance</label>
+                            <br>
+                            <input type="checkbox" id="symptom2" name="symptoms" value="Cold extremities" />
+                            <label for="symptom2">Cold extremities</label>
+                            <br>
+                            <input type="checkbox" id="symptom3" name="symptoms" value="Weak Pulse" />
+                            <label for="symptom3">Weak Pulse</label>
+                            <br>
+                            <input type="checkbox" id="symptom4" name="symptoms" value="Uncontrolled body shaking (Seizures)" />
+                            <label for="symptom4">Uncontrolled body shaking (Seizures)</label>
+                            <br>
+                            <input type="checkbox" id="symptom5" name="symptoms" value="Dark red or brown urine" />
+                            <label for="symptom5">Dark red or brown urine</label>
+                            <br>
+                            <input type="checkbox" id="symptom6" name="symptoms" value="Abnormal milk" />
+                            <label for="symptom6">Abnormal milk</label>
+                            <br>
+                            <label for="additional_symptoms">Additional Symptoms</label>
+                                <select name="symptoms" id="additional_symptoms" class="others" multiple multiselect-search="true">
+                                    {% for symptom in remaining_symptoms %}
+                                        <option name="symptoms" value="{{ symptom }}">{{ symptom }}</option>
+                                    {% endfor %}
+                                </select>
+                        </div>
+                    </ul>
+                </nav>
+                <div class="buttons1">
+                    <a href="{{ url_for('symptoms2') }}">
+                        <button class="back" type="button">Back</button></a>
+                    <button class="next" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="footer1">
+        <span class="nowrap">Copyright &copy; 2024 Cow Cure by Poojya Gupta, Bhavya Parmar and Dikshita Bargoda. All rights reserved</span>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/multi.js') }}"></script>
+
+</body>
+</html>

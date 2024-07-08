@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Poojya Gupta" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <meta name="description" content="game" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Diagnosis Result - Cow Cure</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/image 1.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255,1);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+    <a href="{{ url_for('index') }}">
+      <img src="{{ url_for('static', filename='images/Cow cure bar dark transparent.png') }}" width="256px" height="120px" /></a>
+      <nav class="heading">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+      </nav>
+      <div class="fas fa-bars" id="menu-btn"></div>
+    </header>
+
+    <section class="recog">
+        {% if error_message %}
+        <div>
+            <p>{{ error_message }}</p>
+        </div>
+        {% else %}
+        <p>Your cow most likely suffers from either of the following diseases:</p>
+        <ul>
+        {% for disease, score in diseases_with_scores %}
+            <li>{{ disease }} - Accuracy: {{ score }}%</li>
+            <button type="button">
+                <a href="{{ url_for('disease_info', disease_name=disease) }}">View Treatments</a>
+            </button>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <br><br>
+        <button onclick="window.history.back()">Go Back</button>
+    </section>
+
+    <footer class="footer">
+        <div class="queries">
+            <h2>Got any queries?</h2>
+            <form method="post" action="https://script.google.com/macros/s/AKfycbzTWUFoRSDt9R-5g4OO_w2SKg2IpjyZNZq3pt6E9NDTaSiWB9py7IS2WwGQG-0Ez06F/exec" name="queries-form">
+                <input name="Name" type="text" placeholder="Full Name" required />
+                <input name="Email" type="email" placeholder="Email Id" required />
+                <textarea name="Query" rows="3" cols="42" class="query1" placeholder="Enter your query" required></textarea>
+                <input type="submit" value="Submit" class="btn2" id="submit">
+            </form>
+        </div>
+  
+        <div class="sections" id="contact">
+            <h2>Sections</h2>
+            <nav class="fnav">
+            <ul>
+                <a href="{{ url_for('index') }}">Home</a>
+            </ul>
+            <ul>
+                <a href="{{ url_for('index') }}">About us</a>
+            </ul>
+            <ul>
+                <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+            </ul>
+            </nav>
+            <br>
+            <h2>Services</h2>
+            <nav class="fnav">
+            <ul>
+                <a href="{{ url_for('symptoms1') }}">Cattle Disease Finder</a>
+            </ul>
+            <ul>
+                <a href="{{ url_for('all_diseases') }}">Disease Repository</a>
+            </ul>
+            </nav>
+        </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/Cow cure logo light transparent.png') }}" alt="cow cure" width="250px" height="250px" />
+            <br>
+            <div class="copyright">
+                <p>Copyright &copy; 2024 Cow Cure</p>
+                <p>By Poojya Gupta, Bhavya</p>
+                <p>Parmar and Dikshita Bargoda</p>
+                <p>All rights reserved</p>
+            </div>
+        </div>
+        </footer>
+</body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Poojya Gupta" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+        <meta name="description" content="game" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+        <title>Cow Cure</title>
+        <style>
+            #home {
+                background-image: url("{{ url_for('static', filename='images/bg img.png') }}");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: rgba(255, 255, 255, 0.9);
+                background-blend-mode: soft-light;
+                background-attachment: fixed;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="intro">
+            <h1 class="logo-header">
+                <span class="intro-logo">C</span>
+                <span class="intro-logo">o</span>
+                <span class="intro-logo">w</span>
+                <span class="intro-logo">  </span>
+                <span class="intro-logo">  </span>
+                <span class="intro-logo">C</span>
+                <span class="intro-logo">u</span>
+                <span class="intro-logo">r</span>
+                <span class="intro-logo">e</span>
+    
+            </h1>
+        </div>
+
+        <header class="header">
+            <a href="#home">
+            <img src="{{ url_for('static', filename='images/Cow cure bar dark transparent.png') }}" width="256px" height="120px" /></a>
+            <nav class="heading">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+            </nav>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </header>
+
+        <section class="home" id="home">
+        <div class="stand">
+            <h3>We stand for<br>
+            the <span class="cow">COWS</span></h3>
+            <a href="{{ url_for('symptoms1') }}" class="btn1">What's wrong with my cow?</a>
+            <div class="searches">
+                <div class="search-container">
+                    <input
+                        id="inputbox"
+                        type="text"
+                        placeholder="Search diseases..."
+                        oninput="fetchSuggestions()"
+                        autocomplete="off">
+                    <ul id="dropdown" class="dropdown"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img
+            src="{{ url_for('static', filename='images/home-img.png') }}"
+            alt="cow image"/>
+        </div>
+        </section>
+
+        <main class="about" id="about">
+        <h4>About</h4>
+        <h2>Cow Cure</h2>
+        <div class="content">
+            <img src="{{url_for('static', filename='images/about-img.png')}}" alt="cow image" class="about-img">
+
+            <p>
+                Welcome to Cow Cure! Cow Cure is an initiative taken up by Poojya Gupta, 
+                Dikshita Bargoda and Bhavya Parmar. We at Cow Cure have a vision to make 
+                farmers self-dependent by providing a disease guide which helps the farmer 
+                to identify potential health issues in their cattle and suggests the suitable 
+                treatments and necessary precautions. We hope to make the world a better place 
+                for cows by our small efforts.
+            </p>
+        </div>
+        </main>
+        <footer class="footer">
+            <div class="queries">
+                <h2>Got any queries?</h2>
+                <form method="post" action="https://script.google.com/macros/s/AKfycbzTWUFoRSDt9R-5g4OO_w2SKg2IpjyZNZq3pt6E9NDTaSiWB9py7IS2WwGQG-0Ez06F/exec" name="queries-form">
+                    <input name="Name" type="text" placeholder="Full Name" required />
+                    <input name="Email" type="email" placeholder="Email Id" required />
+                    <textarea name="Query" rows="3" cols="42" class="query1" placeholder="Enter your query" required></textarea>
+                    <input type="submit" value="Submit" class="btn2" id="submit">
+                </form>
+            </div>
+      
+            <div class="sections" id="contact">
+                <h2>Sections</h2>
+                <nav class="fnav">
+                <ul>
+                    <a href="#">Home</a>
+                </ul>
+                <ul>
+                    <a href="#about">About us</a>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('all_diseases') }}">All Diseases</a>
+                </ul>
+                </nav>
+                <br>
+                <h2>Services</h2>
+                <nav class="fnav">
+                <ul>
+                    <a href="{{ url_for('symptoms1') }}">Cattle Disease Finder</a>
+                </ul>
+                <ul>
+                    <a href="{{ url_for('all_diseases') }}">Disease Repository</a>
+                </ul>
+                </nav>
+            </div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/Cow cure logo light transparent.png') }}" alt="cow cure" width="250px" height="250px" />
+                <br>
+                <div class="copyright">
+                    <p>Copyright &copy; 2024 Cow Cure</p>
+                    <p>By Poojya Gupta, Bhavya</p>
+                    <p>Parmar and Dikshita Bargoda</p>
+                    <p>All rights reserved</p>
+                </div>
+            </div>
+            </footer>
+    </body>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>
