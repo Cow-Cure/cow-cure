@@ -24,7 +24,7 @@ Cow Cure is a web-app project developed by Poojya Gupta, Bhavya Parmar and Diksh
 
 ## Deployment
 
-Once you have downloaded the repository ensure that it's structure is as shown below:
+Once you have downloaded the repository ensure that its structure is as shown below:
 
 ```bash
 Website Codes/
