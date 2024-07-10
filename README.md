@@ -13,8 +13,8 @@ Cow Cure is a web-app project developed by Poojya Gupta, Bhavya Parmar and Diksh
 
 ## Features
 
-- 3-Step Cattle Disease Finder tool - uses bipartite graph to match input symptoms to the disease
-- Detailed information about the disease (Symptoms, Causes, Treaments, Preventions)
+- 3-Step Cattle Disease Finder tool - uses a bipartite graph to match input symptoms to the disease
+- Detailed information about the disease (Symptoms, Causes, Treatments, Preventions)
 - Flask Backend
 - Queries Form connected to Google Sheets
 - Search disease bar with auto-suggest
